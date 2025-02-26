@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MenuIcon, X, Phone, Users, Server, FileText, Mail } from 'lucide-react';
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +37,7 @@ export default function Home() {
       <Head>
         <title>Jelcom | Contact Center Solutions</title>
         <meta name="description" content="Soluciones integrales de contact center para su empresa" />
-        <link rel="icon" href="/logo.png"/>
+        <link rel="icon" href="/logo.png" />
       </Head>
 
       {/* Navbar */}
@@ -104,58 +105,70 @@ export default function Home() {
       </header>
 
       <main>
-        {/* Hero Section */}
-        <section id="inicio" className="min-h-screen flex items-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10"></div>
-          <div
-            className="absolute inset-0 bg-black"
-            style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              opacity: 0.6
-            }}
-          ></div>
-
-          <div className="container mx-auto px-4 z-20">
-            <div className="max-w-2xl">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-5xl md:text-6xl font-bold mb-6"
-              >
-                Contact center <span className="text-[#fe9903]">especializado</span>
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-xl md:text-2xl mb-8 text-gray-300"
-              >
-                Transformamos la experiencia de sus clientes con soluciones de alta tecnología
-              </motion.p>
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="bg-[#fe9903] text-black px-8 py-3 rounded-full text-lg font-bold hover:bg-opacity-90 transition duration-300"
-                onClick={() => navigateTo('contacto')}
-              >
-                Contáctanos
-              </motion.button>
-            </div>
+        <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+          {/* Fondo con imagen y desenfoque dinámico */}
+          <div className="absolute inset-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
+                filter: "brightness(0.5) blur(2px)"
+              }}
+            ></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
           </div>
 
-          <div className="absolute bottom-10 left-0 right-0 flex justify-center z-20">
+          {/* Contenido */}
+          <div className="relative z-20 text-center px-6">
+            <motion.img
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              src="/jelcom3.png"
+              alt="Jelcom Logo"
+              className="mx-auto w-44 md:w-52 mb-4"
+            />
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="text-5xl md:text-7xl font-extrabold text-white leading-tight drop-shadow-lg"
+            >
+              Contact Center <span className="text-[#fe9903]">especializado</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="text-lg md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto"
+            >
+              Elevamos la experiencia de tus clientes con tecnología avanzada y servicio de calidad.
+            </motion.p>
+
+            {/* Botón con efecto brillante */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative mt-8 px-10 py-4 text-lg font-semibold rounded-full text-black bg-[#fe9903] hover:scale-105 transition-transform duration-300"
+              onClick={() => navigateTo('contacto')}
+            >
+              Contáctanos
+              <span className="absolute inset-0 bg-white opacity-20 rounded-full blur-lg transition-opacity duration-300 hover:opacity-30"></span>
+            </motion.button>
+          </div>
+
+          {/* Indicador de scroll */}
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
               <button
                 onClick={() => navigateTo('nosotros')}
-                className="text-white opacity-80 hover:opacity-100"
+                className="text-white opacity-80 hover:opacity-100 flex flex-col items-center"
               >
+                <span className="text-xs mb-1">Desliza</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-8 w-8"
@@ -169,6 +182,7 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
 
         {/* Nosotros Section */}
         <section id="nosotros" className="py-20 bg-zinc-900">
@@ -234,51 +248,51 @@ export default function Home() {
         </section>
 
         <section id="clientes" className="py-20 bg-zinc-900">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-16">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl font-bold mb-4 text-white"
-      >
-        Nuestros <span className="text-[#fe9903]">Clientes</span>
-      </motion.h2>
-      <div className="w-24 h-1 bg-[#fe9903] mx-auto"></div>
-    </div>
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl font-bold mb-4 text-white"
+              >
+                Nuestros <span className="text-[#fe9903]">Clientes</span>
+              </motion.h2>
+              <div className="w-24 h-1 bg-[#fe9903] mx-auto"></div>
+            </div>
 
-    {/* Contenedor de los logos */}
-    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
-      {[
-        { name: "Cliente 1", logo: "/logos/1.png" },
-        { name: "Cliente 2", logo: "/logos/2.png" },
-        { name: "Cliente 3", logo: "/logos/3.png" },
-        { name: "Cliente 4", logo: "/logos/4.png" },
-        { name: "Cliente 5", logo: "/logos/5.png" },
-        { name: "Cliente 1", logo: "/logos/6.png" },
-        { name: "Cliente 2", logo: "/logos/7.png" },
-        { name: "Cliente 3", logo: "/logos/8.png" },
-        { name: "Cliente 4", logo: "/logos/11.png" },
-      ].map((cliente, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.2 }}
-          className="flex justify-center"
-        >
-          <img
-            src={cliente.logo}
-            alt={cliente.name}
-            className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
-          />
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+            {/* Contenedor de los logos */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
+              {[
+                { name: "Cliente 1", logo: "/logos/1.png" },
+                { name: "Cliente 2", logo: "/logos/2.png" },
+                { name: "Cliente 3", logo: "/logos/3.png" },
+                { name: "Cliente 4", logo: "/logos/4.png" },
+                { name: "Cliente 5", logo: "/logos/5.png" },
+                { name: "Cliente 1", logo: "/logos/6.png" },
+                { name: "Cliente 2", logo: "/logos/7.png" },
+                { name: "Cliente 3", logo: "/logos/8.png" },
+                { name: "Cliente 4", logo: "/logos/11.png" },
+              ].map((cliente, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="flex justify-center"
+                >
+                  <img
+                    src={cliente.logo}
+                    alt={cliente.name}
+                    className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
 
         {/* Servicios Section */}
@@ -388,13 +402,13 @@ export default function Home() {
                   name: "Business",
                   price: "",
                   description: "Perfecto para empresas en crecimiento",
-                  features: ["Hasta 10 agentes", "Soporte multicanal", "Analytics avanzado", "servicio especializado", "Automatización básica"]
+                  features: ["Hasta 10 agentes", "Soporte multicanal","servicio especializado", "Automatización básica"]
                 },
                 {
                   name: "Enterprise",
                   price: "",
                   description: "Solución para grandes corporaciones",
-                  features: ["Agentes ilimitados", "Omnicanalidad total", "IA y automatización", "Servicio especializado", "Integración sistemas"]
+                  features: ["Agentes ilimitados", "IA y automatización", "Servicio especializado", "Integración sistemas"]
                 }
               ].map((plan, index) => (
                 <motion.div
@@ -429,8 +443,8 @@ export default function Home() {
                     </ul>
                     <button
                       className={`mt-8 w-full py-3 rounded-full font-bold ${index === 1
-                          ? 'bg-black text-white hover:bg-gray-900'
-                          : 'bg-[#fe9903] text-black hover:bg-opacity-90'
+                        ? 'bg-black text-white hover:bg-gray-900'
+                        : 'bg-[#fe9903] text-black hover:bg-opacity-90'
                         } transition duration-300`}
                       onClick={() => navigateTo('contacto')}
                     >
@@ -654,6 +668,30 @@ export default function Home() {
                 </button>
               </form>
             </div>
+          </div>
+        </div>
+        <div className="fixed bottom-5 right-5 flex flex-col space-y-3 z-50">
+          <div className="fixed bottom-5 right-5 flex flex-col space-y-3 z-50">
+            {/* Botón de WhatsApp */}
+            <FloatingWhatsApp
+              phoneNumber="+57"
+              accountName="Jelcom soluciones informaticas"
+              avatar="./logo.png"
+              darkMode={true}
+              statusMessage="Normalmente responde en 1 hora"
+              chatMessage="¡Hola! jelcom, ¿en qué te podemos ayudar?"
+              placeholder="Escribe un mensaje"
+              notification={true}
+              chatboxHeight={340}
+            />
+
+            {/* Botón de Cotizar Ahora */}
+            <a
+              href="#contacto"
+              className="fixed left-4 bottom-20 flex items-center bg-orange-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-orange-600 transition"
+            >
+              Cotizar Ahora
+            </a>
           </div>
         </div>
       </footer>
