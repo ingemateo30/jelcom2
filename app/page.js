@@ -276,19 +276,19 @@ export default function Home() {
                 { name: "Cliente 4", logo: "/logos/11.png" },
               ].map((cliente, index) => (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="flex justify-center"
-                >
-                  <img
-                    src={cliente.logo}
-                    alt={cliente.name}
-                    className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
-                  />
-                </motion.div>
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="flex justify-center"
+              >
+                <img
+                  src={cliente.logo}
+                  alt={cliente.name}
+                  className="h-24 w-auto object-contain transition duration-300"
+                />
+              </motion.div>
               ))}
             </div>
           </div>
