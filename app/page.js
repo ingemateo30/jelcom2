@@ -41,68 +41,83 @@ export default function Home() {
       </Head>
 
       {/* Navbar */}
-      <header className={`fixed w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-black shadow-lg py-2' : 'bg-transparent py-4'}`}>
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl font-bold"
-            >
-              <span className="text-white">Jel</span>
-              <span className="text-[#fe9903]">com</span>
-            </motion.div>
-          </div>
+      <header
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrollY > 50 ? "bg-black shadow-lg py-2" : "bg-transparent py-4"
+      }`}
+    >
+      <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold"
+          >
+            <span className="text-white">Jel</span>
+            <span className="text-[#fe9903]">com</span>
+          </motion.div>
+        </div>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex space-x-8">
-            {['inicio', 'nosotros', 'servicios', 'planes', 'contacto'].map((item) => (
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex space-x-8">
+          {["inicio", "nosotros", "servicios", "planes", "contacto"].map(
+            (item) => (
               <button
                 key={item}
                 onClick={() => navigateTo(item)}
-                className={`text-lg font-medium relative ${activeSection === item ? 'text-[#fe9903]' : 'text-white hover:text-gray-300'
-                  }`}
+                className={`text-lg font-medium relative ${
+                  activeSection === item
+                    ? "text-[#fe9903]"
+                    : "text-white hover:text-gray-300"
+                }`}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
                 {activeSection === item && (
                   <motion.div
                     layoutId="underline"
                     className="absolute left-0 right-0 h-0.5 bg-[#fe9903]"
-                    style={{ bottom: '-5px' }}
+                    style={{ bottom: "-5px" }}
                   />
                 )}
               </button>
-            ))}
-          </nav>
-          <button className="md:hidden text-white" onClick={toggleMenu}>
-            {isMenuOpen ? <X size={24} /> : <MenuIcon size={24} />}
-          </button>
-        </div>
+            )
+          )}
+        </nav>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black"
-          >
-            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              {['inicio', 'nosotros', 'servicios', 'planes', 'contacto'].map((item) => (
+        {/* Mobile Menu Button */}
+        <button className="md:hidden text-white" onClick={toggleMenu}>
+          {isMenuOpen ? <X size={24} /> : <MenuIcon size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          className="md:hidden absolute top-full left-0 w-full bg-black"
+        >
+          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            {["inicio", "nosotros", "servicios", "planes", "contacto"].map(
+              (item) => (
                 <button
                   key={item}
                   onClick={() => navigateTo(item)}
-                  className={`text-lg font-medium py-2 ${activeSection === item ? 'text-[#fe9903]' : 'text-white'
-                    }`}
+                  className={`text-lg font-medium py-2 ${
+                    activeSection === item ? "text-[#fe9903]" : "text-white"
+                  }`}
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </header>
+              )
+            )}
+          </div>
+        </motion.div>
+      )}
+    </header>
 
       <main>
         <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
