@@ -846,10 +846,18 @@ export default function Home() {
             {/* Botón de Cotizar Ahora */}
             <a
               href="#contacto"
-              className="fixed left-4 bottom-20 flex items-center bg-orange-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-orange-600 transition"
+              className="fixed left-4 top-1/2 transform -translate-y-1/2 flex items-center bg-[#fe9903] text-white p-3 rounded-full shadow-lg transition-all duration-300 group hover:p-4"
             >
-              Cotizar Ahora
+              <svg className="w-5 h-5 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1C6.49 1 2 5.49 2 11v3c0 1.66 1.34 3 3 3h1v-2H5c-.55 0-1-.45-1-1v-3c0-4.41 3.59-8 8-8s8 3.59 8 8v3c0 .55-.45 1-1 1h-1v2h1c1.66 0 3-1.34 3-3v-3c0-5.51-4.49-10-10-10zm-1 19h2v2h-2v-2zm-3 0h2v2H8v-2zm8 0h2v2h-2v-2z"></path>
+              </svg>
+              <span className="opacity-0 text-sm ml-2 transition-all duration-300 group-hover:opacity-100 group-hover:ml-3">
+                Cotizar
+              </span>
             </a>
+
+
+
           </div>
         </div>
       </footer>
