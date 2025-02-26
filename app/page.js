@@ -43,8 +43,8 @@ export default function Home() {
       {/* Navbar */}
       <header
         className={`fixed w-full z-50 transition-all duration-500 ${scrollY > 50
-            ? "bg-gradient-to-r from-black to-gray-900 shadow-lg py-2"
-            : "bg-gradient-to-r from-black/70 to-gray-900/70 backdrop-blur-md py-4"
+          ? "bg-gradient-to-r from-black to-gray-900 shadow-lg py-2"
+          : "bg-gradient-to-r from-black/70 to-gray-900/70 backdrop-blur-md py-4"
           }`}
       >
         <div className="w-full max-w-7xl mx-auto px-4 flex justify-between items-center">
@@ -76,16 +76,16 @@ export default function Home() {
                   <button
                     onClick={() => navigateTo(item)}
                     className={`text-lg font-medium transition-colors duration-300 ${activeSection === item
-                        ? "text-[#ff9900]"
-                        : "text-white group-hover:text-[#ff9900]"
+                      ? "text-[#ff9900]"
+                      : "text-white group-hover:text-[#ff9900]"
                       }`}
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </button>
                   <div
                     className={`absolute -bottom-1 left-0 w-full h-0.5 transition-all duration-300 transform ${activeSection === item || isHovered === item
-                        ? "bg-[#ff9900] scale-x-100 opacity-100"
-                        : "bg-[#ff9900]/50 scale-x-0 opacity-0"
+                      ? "bg-[#ff9900] scale-x-100 opacity-100"
+                      : "bg-[#ff9900]/50 scale-x-0 opacity-0"
                       }`}
                   />
                   {/* Indicador de sección activa con animación */}
@@ -169,180 +169,163 @@ export default function Home() {
       </header>
 
       <main>
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-  {/* Fondo animado con efecto parallax */}
-  <div className="absolute inset-0 z-0">
-    {/* Capa de video o imagen de fondo */}
-    <div 
-      className="absolute inset-0 bg-cover bg-center"
-      style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
-        transform: "scale(1.1)",
-        animation: "slowZoom 20s infinite alternate ease-in-out"
-      }}
-    ></div>
-    
-    {/* Overlay con gradiente dinámico */}
-    <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/90 to-transparent"></div>
-    
-    {/* Partículas flotantes - implementadas con posiciones fijas para evitar diferencias cliente/servidor */}
-    <div className="absolute inset-0 opacity-40">
-      {/* Utilizando un array con posiciones predefinidas en lugar de aleatorias */}
-      {[
-        {top: "20%", left: "80%", size: "3px", delay: "0s", duration: "15s"},
-        {top: "15%", left: "20%", size: "2px", delay: "2s", duration: "18s"},
-        {top: "65%", left: "50%", size: "4px", delay: "1s", duration: "12s"},
-        {top: "35%", left: "30%", size: "2px", delay: "3s", duration: "20s"},
-        {top: "75%", left: "75%", size: "3px", delay: "4s", duration: "16s"},
-        {top: "85%", left: "15%", size: "1px", delay: "2s", duration: "14s"},
-        {top: "45%", left: "90%", size: "2px", delay: "1s", duration: "18s"},
-        {top: "55%", left: "10%", size: "3px", delay: "3s", duration: "15s"},
-        {top: "25%", left: "55%", size: "2px", delay: "4s", duration: "17s"},
-        {top: "90%", left: "40%", size: "2px", delay: "0s", duration: "16s"}
-      ].map((particle, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full bg-white"
-          style={{
-            width: particle.size,
-            height: particle.size,
-            top: particle.top,
-            left: particle.left,
-            opacity: 0.5,
-            animation: `float ${particle.duration} infinite linear`,
-            animationDelay: particle.delay
-          }}
-        ></div>
-      ))}
-    </div>
-    
-    {/* Líneas de cuadrícula con números fijos */}
-    <div className="absolute inset-0 opacity-20">
-      {/* Líneas verticales */}
-      <div className="h-full w-px bg-gradient-to-b from-transparent via-gray-500 to-transparent absolute" style={{left: "16.6%"}}></div>
-      <div className="h-full w-px bg-gradient-to-b from-transparent via-gray-500 to-transparent absolute" style={{left: "33.2%"}}></div>
-      <div className="h-full w-px bg-gradient-to-b from-transparent via-gray-500 to-transparent absolute" style={{left: "49.8%"}}></div>
-      <div className="h-full w-px bg-gradient-to-b from-transparent via-gray-500 to-transparent absolute" style={{left: "66.4%"}}></div>
-      <div className="h-full w-px bg-gradient-to-b from-transparent via-gray-500 to-transparent absolute" style={{left: "83%"}}></div>
-      
-      {/* Líneas horizontales */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent absolute" style={{top: "16.6%"}}></div>
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent absolute" style={{top: "33.2%"}}></div>
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent absolute" style={{top: "49.8%"}}></div>
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent absolute" style={{top: "66.4%"}}></div>
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent absolute" style={{top: "83%"}}></div>
-    </div>
-  </div>
+        <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          {/* Fondo animado con efecto parallax */}
+          <div className="absolute inset-0 z-0">
+            {/* Capa de video o imagen de fondo */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
+                transform: "scale(1.1)",
+                animation: "slowZoom 20s infinite alternate ease-in-out"
+              }}
+            ></div>
 
-  {/* Contenido principal con posicionamiento corregido */}
-  <div className="relative z-20 text-center px-6 w-full max-w-6xl mx-auto pt-20 pb-32">
-    <div className="flex flex-col items-center">
-      {/* Logo con efecto de resplandor - Ajustado para no estar tan arriba */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, type: "spring", stiffness: 100 }}
-        className="relative mb-6 w-40 md:w-48 aspect-square flex items-center justify-center"
-      >
-        <div className="absolute inset-0 bg-[#fe9903]/20 rounded-full filter blur-xl animate-pulse"></div>
-        <img 
-          src="/jelcom3.png" 
-          alt="Jelcom Logo" 
-          className="relative z-10 w-full drop-shadow-[0_0_10px_rgba(254,153,3,0.5)]"
-        />
-      </motion.div>
-      
-      {/* Titular con efectos de texto */}
-      <motion.h1
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight"
-      >
-        <span className="relative inline-block mr-4">
-          Contact
-          <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent"></span>
-        </span>
-        <span className="relative inline-block mr-4">
-          Center
-          <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent"></span>
-        </span>
-        <span className="relative inline-block bg-gradient-to-r from-[#fe9903] to-[#ff6a00] text-transparent bg-clip-text font-black">
-          especializado
-          <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#fe9903] to-[#ff6a00]"></span>
-        </span>
-      </motion.h1>
-      
-      {/* Subtítulo con aparición secuencial */}
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto font-light leading-relaxed"
-      >
-        Elevamos la experiencia de tus clientes con 
-        <span className="relative mx-2 inline-block">
-          <span className="relative z-10 font-medium text-white">tecnología avanzada</span>
-          <span className="absolute bottom-0 left-0 w-full h-1 bg-[#fe9903]/70"></span>
-        </span> 
-        y 
-        <span className="relative mx-2 inline-block">
-          <span className="relative z-10 font-medium text-white">servicio de calidad</span>
-          <span className="absolute bottom-0 left-0 w-full h-1 bg-[#fe9903]/70"></span>
-        </span>.
-      </motion.p> 
-      {/* Botones de acción principal - Espacio aumentado desde el final*/}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
-        className="flex flex-col sm:flex-row gap-4 mt-10 justify-center mb-16"
-      >
-        {/* Botón principal con efecto brillante */}
-        <button 
-          onClick={() => navigateTo('contacto')}
-          className="group relative overflow-hidden px-8 py-3.5 rounded-full bg-gradient-to-r from-[#fe9903] to-[#ff6a00] text-black font-bold text-lg shadow-lg hover:shadow-[#fe9903]/40 transition-all duration-300 hover:scale-105"
-        >
-          <span className="relative z-10">Contáctanos ahora</span>
-          <span className="absolute top-0 left-0 w-full h-full bg-white/30 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
-        </button>
-        
-        {/* Botón secundario */}
-        <button 
-          onClick={() => navigateTo('servicios')}
-          className="px-8 py-3.5 rounded-full border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors duration-300"
-        >
-          Ver servicios
-        </button>
-      </motion.div>
-    </div>
-  </div>
-  
-  {/* Indicador de scroll reposicionado para evitar superposición */}
-  <motion.div 
-    className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 1.5, duration: 1 }}
-  >
-    <motion.div
-      animate={{ y: [0, 10, 0] }}
-      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      className="flex flex-col items-center"
-    >
-      <span className="text-white/70 text-sm mb-2 tracking-wide">Descubre más</span>
-      <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-        <motion.div 
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-1.5 h-1.5 bg-white rounded-full"
-        />
-      </div>
-    </motion.div>
-  </motion.div>
-  
-  {/* Estilos CSS para animaciones personalizadas */}
-  <style jsx>{`
+            {/* Overlay con gradiente dinámico */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/90 to-transparent"></div>
+
+            {/* Partículas flotantes - implementadas con posiciones fijas para evitar diferencias cliente/servidor */}
+            <div className="absolute inset-0 opacity-40">
+              {/* Utilizando un array con posiciones predefinidas en lugar de aleatorias */}
+              {[
+                { top: "20%", left: "80%", size: "3px", delay: "0s", duration: "15s" },
+                { top: "15%", left: "20%", size: "2px", delay: "2s", duration: "18s" },
+                { top: "65%", left: "50%", size: "4px", delay: "1s", duration: "12s" },
+                { top: "35%", left: "30%", size: "2px", delay: "3s", duration: "20s" },
+                { top: "75%", left: "75%", size: "3px", delay: "4s", duration: "16s" },
+                { top: "85%", left: "15%", size: "1px", delay: "2s", duration: "14s" },
+                { top: "45%", left: "90%", size: "2px", delay: "1s", duration: "18s" },
+                { top: "55%", left: "10%", size: "3px", delay: "3s", duration: "15s" },
+                { top: "25%", left: "55%", size: "2px", delay: "4s", duration: "17s" },
+                { top: "90%", left: "40%", size: "2px", delay: "0s", duration: "16s" }
+              ].map((particle, i) => (
+                <div
+                  key={i}
+                  className="absolute rounded-full bg-white"
+                  style={{
+                    width: particle.size,
+                    height: particle.size,
+                    top: particle.top,
+                    left: particle.left,
+                    opacity: 0.5,
+                    animation: `float ${particle.duration} infinite linear`,
+                    animationDelay: particle.delay
+                  }}
+                ></div>
+              ))}
+            </div>
+          </div>
+
+          {/* Contenido principal con posicionamiento corregido */}
+          <div className="relative z-20 text-center px-6 w-full max-w-6xl mx-auto pt-20 pb-32">
+            <div className="flex flex-col items-center">
+              {/* Logo con efecto de resplandor - Ajustado para no estar tan arriba */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, type: "spring", stiffness: 100 }}
+                className="relative mb-6 w-40 md:w-48 aspect-square flex items-center justify-center"
+              >
+                <div className="absolute inset-0 bg-[#fe9903]/20 rounded-full filter blur-xl animate-pulse"></div>
+                <img
+                  src="/jelcom3.png"
+                  alt="Jelcom Logo"
+                  className="relative z-10 w-full drop-shadow-[0_0_10px_rgba(254,153,3,0.5)]"
+                />
+              </motion.div>
+
+              {/* Titular con efectos de texto */}
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight"
+              >
+                <span className="relative inline-block mr-4">
+                  Contact
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent"></span>
+                </span>
+                <span className="relative inline-block mr-4">
+                  Center
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent"></span>
+                </span>
+                <span className="relative inline-block bg-gradient-to-r from-[#fe9903] to-[#ff6a00] text-transparent bg-clip-text font-black">
+                  especializado
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#fe9903] to-[#ff6a00]"></span>
+                </span>
+              </motion.h1>
+
+              {/* Subtítulo con aparición secuencial */}
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto font-light leading-relaxed"
+              >
+                Elevamos la experiencia de tus clientes con
+                <span className="relative mx-2 inline-block">
+                  <span className="relative z-10 font-medium text-white">tecnología avanzada</span>
+                  <span className="absolute bottom-0 left-0 w-full h-1 bg-[#fe9903]/70"></span>
+                </span>
+                y
+                <span className="relative mx-2 inline-block">
+                  <span className="relative z-10 font-medium text-white">servicio de calidad</span>
+                  <span className="absolute bottom-0 left-0 w-full h-1 bg-[#fe9903]/70"></span>
+                </span>.
+              </motion.p>
+              {/* Botones de acción principal - Espacio aumentado desde el final*/}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="flex flex-col sm:flex-row gap-4 mt-10 justify-center mb-16"
+              >
+                {/* Botón principal con efecto brillante */}
+                <button
+                  onClick={() => navigateTo('contacto')}
+                  className="group relative overflow-hidden px-8 py-3.5 rounded-full bg-gradient-to-r from-[#fe9903] to-[#ff6a00] text-black font-bold text-lg shadow-lg hover:shadow-[#fe9903]/40 transition-all duration-300 hover:scale-105"
+                >
+                  <span className="relative z-10">Contáctanos ahora</span>
+                  <span className="absolute top-0 left-0 w-full h-full bg-white/30 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
+                </button>
+
+                {/* Botón secundario */}
+                <button
+                  onClick={() => navigateTo('servicios')}
+                  className="px-8 py-3.5 rounded-full border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors duration-300"
+                >
+                  Ver servicios
+                </button>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Indicador de scroll reposicionado para evitar superposición */}
+          <motion.div
+            className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="flex flex-col items-center"
+            >
+              <span className="text-white/70 text-sm mb-2 tracking-wide">Descubre más</span>
+              <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-1.5 h-1.5 bg-white rounded-full"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Estilos CSS para animaciones personalizadas */}
+          <style jsx>{`
     @keyframes slowZoom {
       0% { transform: scale(1.0); }
       100% { transform: scale(1.15); }
@@ -356,9 +339,9 @@ export default function Home() {
       100% { transform: translateY(0) translateX(0); }
     }
   `}</style>
-</section>
- 
-        
+        </section>
+
+
         {/* Nosotros Section */}
         <section id="nosotros" className="py-20 bg-zinc-900">
           <div className="container mx-auto px-4">
@@ -422,51 +405,51 @@ export default function Home() {
         </section>
 
         <section id="clientes" className="py-20 bg-gradient-to-b from-zinc-900 to-black">
-  <div className="container mx-auto px-6 lg:px-20">
-    <div className="text-center mb-12">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-3xl font-bold text-white"
-      >
-        Nuestros <span className="text-[#fe9903]">Clientes</span>
-      </motion.h2>
-      <div className="w-20 h-1 bg-[#fe9903] mx-auto mt-2 rounded-full"></div>
-    </div>
+          <div className="container mx-auto px-6 lg:px-20">
+            <div className="text-center mb-12">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="text-3xl font-bold text-white"
+              >
+                Nuestros <span className="text-[#fe9903]">Clientes</span>
+              </motion.h2>
+              <div className="w-20 h-1 bg-[#fe9903] mx-auto mt-2 rounded-full"></div>
+            </div>
 
-    {/* Carrusel de logos */}
-    <Marquee gradient={false} speed={40} pauseOnHover={true} className="overflow-hidden">
-      {[
-        { name: "Cliente 1", logo: "/logos/1.png" },
-        { name: "Cliente 2", logo: "/logos/2.png" },
-        { name: "Cliente 3", logo: "/logos/3.png" },
-        { name: "Cliente 4", logo: "/logos/4.png" },
-        { name: "Cliente 5", logo: "/logos/5.png" },
-        { name: "Cliente 6", logo: "/logos/6.png" },
-        { name: "Cliente 7", logo: "/logos/7.png" },
-        { name: "Cliente 8", logo: "/logos/8.png" },
-        { name: "Cliente 9", logo: "/logos/11.png" },
-      ].map((cliente, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          className="mx-8 flex justify-center"
-        >
-          <img
-            src={cliente.logo}
-            alt={cliente.name}
-            className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 hover:opacity-80"
-          />
-        </motion.div>
-      ))}
-    </Marquee>
-  </div>
-</section>
+            {/* Carrusel de logos */}
+            <Marquee gradient={false} speed={40} pauseOnHover={true} className="overflow-hidden">
+              {[
+                { name: "Cliente 1", logo: "/logos/1.png" },
+                { name: "Cliente 2", logo: "/logos/2.png" },
+                { name: "Cliente 3", logo: "/logos/3.png" },
+                { name: "Cliente 4", logo: "/logos/4.png" },
+                { name: "Cliente 5", logo: "/logos/5.png" },
+                { name: "Cliente 6", logo: "/logos/6.png" },
+                { name: "Cliente 7", logo: "/logos/7.png" },
+                { name: "Cliente 8", logo: "/logos/8.png" },
+                { name: "Cliente 9", logo: "/logos/11.png" },
+              ].map((cliente, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="mx-8 flex justify-center"
+                >
+                  <img
+                    src={cliente.logo}
+                    alt={cliente.name}
+                    className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 hover:opacity-80"
+                  />
+                </motion.div>
+              ))}
+            </Marquee>
+          </div>
+        </section>
 
 
 
