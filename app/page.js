@@ -405,51 +405,55 @@ export default function Home() {
         </section>
 
         <section id="clientes" className="py-20 bg-gradient-to-b from-zinc-900 to-black">
-          <div className="container mx-auto px-6 lg:px-20">
-            <div className="text-center mb-12">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="text-3xl font-bold text-white"
-              >
-                Nuestros <span className="text-[#fe9903]">Clientes</span>
-              </motion.h2>
-              <div className="w-20 h-1 bg-[#fe9903] mx-auto mt-2 rounded-full"></div>
-            </div>
+  <div className="container mx-auto px-6 lg:px-20">
+    <div className="text-center mb-12">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-3xl font-bold text-white"
+      >
+        Nuestros <span className="text-[#fe9903]">Clientes</span>
+      </motion.h2>
+      <div className="w-20 h-1 bg-[#fe9903] mx-auto mt-2 rounded-full"></div>
+    </div>
 
-            {/* Carrusel de logos */}
-            <Marquee gradient={false} speed={40} pauseOnHover={true} className="overflow-hidden">
-              {[
-                { name: "Cliente 1", logo: "/logos/1.png" },
-                { name: "Cliente 2", logo: "/logos/2.png" },
-                { name: "Cliente 3", logo: "/logos/3.png" },
-                { name: "Cliente 4", logo: "/logos/4.png" },
-                { name: "Cliente 5", logo: "/logos/5.png" },
-                { name: "Cliente 6", logo: "/logos/6.png" },
-                { name: "Cliente 7", logo: "/logos/7.png" },
-                { name: "Cliente 8", logo: "/logos/8.png" },
-                { name: "Cliente 9", logo: "/logos/11.png" },
-              ].map((cliente, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="mx-8 flex justify-center"
-                >
-                  <img
-                    src={cliente.logo}
-                    alt={cliente.name}
-                    className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 hover:opacity-80"
-                  />
-                </motion.div>
-              ))}
-            </Marquee>
+    {/* Carrusel de logos */}
+    <Marquee gradient={false} speed={40} pauseOnHover={true} className="overflow-hidden">
+      {[
+        { name: "Cliente 1", logo: "/logos/1.png" },
+        { name: "Cliente 2", logo: "/logos/2.png" },
+        { name: "Cliente 3", logo: "/logos/3.png" },
+        { name: "Cliente 4", logo: "/logos/4.png" },
+        { name: "Cliente 5", logo: "/logos/5.png" },
+        { name: "Cliente 6", logo: "/logos/6.png" },
+        { name: "Cliente 7", logo: "/logos/7.png" },
+        { name: "Cliente 8", logo: "/logos/8.png" },
+        { name: "Cliente 9", logo: "/logos/11.png" },
+      ].map((cliente, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          className="mx-8 flex justify-center"
+        >
+          <div className="bg-white/80 p-4 rounded-lg shadow-lg flex items-center justify-center">
+            <img
+              src={cliente.logo}
+              alt={cliente.name}
+              className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 hover:opacity-90"
+            />
           </div>
-        </section>
+        </motion.div>
+      ))}
+    </Marquee>
+  </div>
+</section>
+
+
 
 
 
