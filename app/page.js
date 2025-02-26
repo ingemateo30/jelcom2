@@ -1,6 +1,6 @@
 
 "use client";
-// pages/index.js
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -36,7 +36,7 @@ export default function Home() {
       <Head>
         <title>Jelcom | Contact Center Solutions</title>
         <meta name="description" content="Soluciones integrales de contact center para su empresa" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png"/>
       </Head>
 
       {/* Navbar */}
