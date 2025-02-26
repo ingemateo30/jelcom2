@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MenuIcon, X, Phone, Users, Server, FileText, Mail } from 'lucide-react';
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -420,52 +421,53 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="clientes" className="py-20 bg-zinc-900">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="text-4xl font-bold mb-4 text-white"
-              >
-                Nuestros <span className="text-[#fe9903]">Clientes</span>
-              </motion.h2>
-              <div className="w-24 h-1 bg-[#fe9903] mx-auto"></div>
-            </div>
+        <section id="clientes" className="py-20 bg-gradient-to-b from-zinc-900 to-black">
+  <div className="container mx-auto px-6 lg:px-20">
+    <div className="text-center mb-12">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-3xl font-bold text-white"
+      >
+        Nuestros <span className="text-[#fe9903]">Clientes</span>
+      </motion.h2>
+      <div className="w-20 h-1 bg-[#fe9903] mx-auto mt-2 rounded-full"></div>
+    </div>
 
-            {/* Contenedor de los logos */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
-              {[
-                { name: "Cliente 1", logo: "/logos/1.png" },
-                { name: "Cliente 2", logo: "/logos/2.png" },
-                { name: "Cliente 3", logo: "/logos/3.png" },
-                { name: "Cliente 4", logo: "/logos/4.png" },
-                { name: "Cliente 5", logo: "/logos/5.png" },
-                { name: "Cliente 1", logo: "/logos/6.png" },
-                { name: "Cliente 2", logo: "/logos/7.png" },
-                { name: "Cliente 3", logo: "/logos/8.png" },
-                { name: "Cliente 4", logo: "/logos/11.png" },
-              ].map((cliente, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="flex justify-center"
-                >
-                  <img
-                    src={cliente.logo}
-                    alt={cliente.name}
-                    className="h-24 w-auto object-contain transition duration-300"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+    {/* Carrusel de logos */}
+    <Marquee gradient={false} speed={40} pauseOnHover={true} className="overflow-hidden">
+      {[
+        { name: "Cliente 1", logo: "/logos/1.png" },
+        { name: "Cliente 2", logo: "/logos/2.png" },
+        { name: "Cliente 3", logo: "/logos/3.png" },
+        { name: "Cliente 4", logo: "/logos/4.png" },
+        { name: "Cliente 5", logo: "/logos/5.png" },
+        { name: "Cliente 6", logo: "/logos/6.png" },
+        { name: "Cliente 7", logo: "/logos/7.png" },
+        { name: "Cliente 8", logo: "/logos/8.png" },
+        { name: "Cliente 9", logo: "/logos/11.png" },
+      ].map((cliente, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          className="mx-8 flex justify-center"
+        >
+          <img
+            src={cliente.logo}
+            alt={cliente.name}
+            className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 hover:opacity-80"
+          />
+        </motion.div>
+      ))}
+    </Marquee>
+  </div>
+</section>
+
 
 
         {/* Servicios Section */}
