@@ -373,14 +373,7 @@ export default function Home() {
                   Con un equipo experto, combinamos tecnología avanzada con estrategias personalizadas para ofrecer experiencias excepcionales.
                 </p>
                 <div className="grid grid-cols-2 gap-6 mt-8">
-                  <div className="flex flex-col items-center">
-                    <div className="text-4xl font-bold text-[#fe9903]">+100</div>
-                    <div className="text-gray-400">Clientes satisfechos</div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <div className="text-4xl font-bold text-[#fe9903]">+12</div>
-                    <div className="text-gray-400">profesionales</div>
-                  </div>
+                  
                 </div>
               </motion.div>
               <motion.div
@@ -430,7 +423,8 @@ export default function Home() {
         { name: "Cliente 6", logo: "/logos/6.png" },
         { name: "Cliente 7", logo: "/logos/7.png" },
         { name: "Cliente 8", logo: "/logos/8.png" },
-        { name: "Cliente 9", logo: "/logos/11.png" },
+        { name: "Cliente 9", logo: "/logos/12.png" },
+        { name: "Cliente 10",logo: "/logos/15.png" },
       ].map((cliente, index) => (
         <motion.div
           key={index}
