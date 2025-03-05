@@ -644,7 +644,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="text-gray-400 text-sm">Teléfono</div>
-                      <div className="font-medium">+57 311 8661238 </div>
+                      <div className="font-medium">+57 3212631673 </div>
                     </div>
                   </div>
 
@@ -826,7 +826,7 @@ export default function Home() {
           <div className="fixed bottom-5 right-5 flex flex-col space-y-3 z-50">
             {/* Botón de WhatsApp */}
             <FloatingWhatsApp
-              phoneNumber="+57"
+              phoneNumber="+573212631673"
               accountName="Jelcom soluciones informaticas"
               avatar="./logo.png"
               darkMode={true}
