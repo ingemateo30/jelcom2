@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { MenuIcon, X, Phone, Users, Server, FileText, Mail } from 'lucide-react';
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import Marquee from "react-fast-marquee";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -856,6 +857,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <SpeedInsights/>
     </div>
   );
 }

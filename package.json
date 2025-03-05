@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
     "framer-motion": "^12.4.7",
     "jelcom": "file:",
     "lucide-react": "^0.476.0",
