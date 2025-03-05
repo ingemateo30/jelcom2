@@ -188,7 +188,7 @@ Los KPIs son la brújula que guía la mejora continua en contact centers.
                                         ? 'bg-[#fe9903] text-black'
                                         : 'bg-zinc-800 text-white hover:bg-zinc-700'
                                     }
-      `}
+                                        `}
                             >
                                 {categoria.nombre}
                             </button>
