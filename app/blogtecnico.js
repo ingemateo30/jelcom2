@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Layers, Zap } from 'lucide-react';
+import { BookOpen, Layers, Zap, X } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 const BlogTecnico = () => {
-  const [activeCategory, setActiveCategory] = useState('todos');
+    const [activeCategory, setActiveCategory] = useState('todos');
+    const [selectedArticle, setSelectedArticle] = useState(null)
 
   const articulosBlog = [
     {
@@ -134,7 +136,7 @@ Los KPIs son la brújula que guía la mejora continua en contact centers.
     }
 ];
 
-  const categorias = [
+const categorias = [
     { id: 'todos', nombre: 'Todos' },
     { id: 'tecnologia', nombre: 'Tecnología' },
     { id: 'estrategia', nombre: 'Estrategia' },
@@ -145,69 +147,118 @@ Los KPIs son la brújula que guía la mejora continua en contact centers.
     ? articulosBlog 
     : articulosBlog.filter(articulo => articulo.categoria === activeCategory);
 
+  const handleLeerMas = (articulo) => {
+    setSelectedArticle(articulo);
+  };
+
+  const closeModal = () => {
+    setSelectedArticle(null);
+  };
+
   return (
-    <section id="blog-tecnico" className="py-20 bg-zinc-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl font-bold mb-4"
-          >
-            Blog <span className="text-[#fe9903]">Técnico</span>
-          </motion.h2>
-          <div className="w-24 h-1 bg-[#fe9903] mx-auto"></div>
-        </div>
-
-        {/* Filtros de categoría */}
-        <div className="flex justify-center mb-12 space-x-4">
-          {categorias.map((categoria) => (
-            <button
-              key={categoria.id}
-              onClick={() => setActiveCategory(categoria.id)}
-              className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                activeCategory === categoria.id 
-                  ? 'bg-[#fe9903] text-black' 
-                  : 'bg-zinc-800 text-white hover:bg-zinc-700'
-              }`}
-            >
-              {categoria.nombre}
-            </button>
-          ))}
-        </div>
-
-        {/* Grid de Artículos */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {articulosFiltrados.map((articulo, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+    <>
+      <section id="blog-tecnico" className="py-20 bg-zinc-900">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-zinc-800 rounded-lg overflow-hidden hover:shadow-lg hover:scale-105 transition-all duration-300"
+              transition={{ duration: 0.8 }}
+              className="text-4xl font-bold mb-4"
             >
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  {articulo.icono}
-                  <span className="ml-3 text-gray-400">{articulo.fecha}</span>
+              Blog <span className="text-[#fe9903]">Técnico</span>
+            </motion.h2>
+            <div className="w-24 h-1 bg-[#fe9903] mx-auto"></div>
+          </div>
+
+          {/* Filtros de categoría */}
+          <div className="flex justify-center mb-12 space-x-4">
+            {categorias.map((categoria) => (
+              <button
+                key={categoria.id}
+                onClick={() => setActiveCategory(categoria.id)}
+                className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                  activeCategory === categoria.id 
+                    ? 'bg-[#fe9903] text-black' 
+                    : 'bg-zinc-800 text-white hover:bg-zinc-700'
+                }`}
+              >
+                {categoria.nombre}
+              </button>
+            ))}
+          </div>
+
+          {/* Grid de Artículos */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {articulosFiltrados.map((articulo, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="bg-zinc-800 rounded-lg overflow-hidden hover:shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    {articulo.icono}
+                    <span className="ml-3 text-gray-400">{articulo.fecha}</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">{articulo.titulo}</h3>
+                  <p className="text-gray-400 mb-4">{articulo.extracto}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-500">Por {articulo.autor}</span>
+                    <button 
+                      onClick={() => handleLeerMas(articulo)}
+                      className="text-[#fe9903] hover:underline"
+                    >
+                      Leer más
+                    </button>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white">{articulo.titulo}</h3>
-                <p className="text-gray-400 mb-4">{articulo.extracto}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">Por {articulo.autor}</span>
-                  <button className="text-[#fe9903] hover:underline">
-                    Leer más
-                  </button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Modal para Contenido Completo */}
+      {selectedArticle && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="bg-zinc-800 rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
+          >
+            <button 
+              onClick={closeModal} 
+              className="absolute top-4 right-4 text-white hover:text-[#fe9903] z-10"
+            >
+              <X size={32} />
+            </button>
+            
+            <div className="p-8">
+              <div className="flex items-center mb-6">
+                {selectedArticle.icono}
+                <div className="ml-4">
+                  <h2 className="text-3xl font-bold text-white">{selectedArticle.titulo}</h2>
+                  <div className="flex items-center mt-2">
+                    <span className="text-gray-400 mr-4">Fecha: {selectedArticle.fecha}</span>
+                    <span className="text-gray-400">Autor: {selectedArticle.autor}</span>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
+              
+              <div className="prose prose-invert max-w-none">
+                <ReactMarkdown>{selectedArticle.contenidoCompleto}</ReactMarkdown>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      )}
+    </>
   );
 };
 
