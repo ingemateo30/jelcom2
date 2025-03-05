@@ -9,6 +9,7 @@ import Marquee from "react-fast-marquee";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import BlogTecnico from './blogtecnico';
 import Nosotros from './nosotros';
+import Call from './calltoaction';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -557,7 +558,7 @@ export default function Home() {
           </div>
         </section>
         <BlogTecnico />
-
+        <Call/>
         {/* Contacto Section */}
         <section id="contacto" className="py-20 bg-black">
           <div className="container mx-auto px-4">
