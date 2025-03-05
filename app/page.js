@@ -1,4 +1,3 @@
-
 "use client";
 
 import Head from 'next/head';
@@ -8,6 +7,7 @@ import { MenuIcon, X, Phone, Users, Server, FileText, Mail } from 'lucide-react'
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import Marquee from "react-fast-marquee";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import BlogTecnico from './blogtecnico';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -609,6 +609,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <BlogTecnico />
 
         {/* Contacto Section */}
         <section id="contacto" className="py-20 bg-black">
