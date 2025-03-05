@@ -14,7 +14,7 @@ const CasosExito = () => {
         mejora: "Reducción del 40% en tiempo de espera",
         satisfaccion: "Aumento del 35% en satisfacción del cliente"
       },
-      iconColor: "text-blue-500"
+      iconColor: "text-orange-500"
     },
     {
       cliente: "Movistar",
@@ -25,7 +25,7 @@ const CasosExito = () => {
         mejora: "50% menos de escalamientos",
         satisfaccion: "Incremento del 45% en resolución primera llamada"
       },
-      iconColor: "text-green-500"
+      iconColor: "text-orange-500"
     },
     {
       cliente: "Éxito",
