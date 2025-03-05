@@ -289,8 +289,6 @@ export default function Home() {
                   <span className="relative z-10">Contáctanos ahora</span>
                   <span className="absolute top-0 left-0 w-full h-full bg-white/30 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
                 </button>
-
-                {/* Botón secundario */}
                 <button
                   onClick={() => navigateTo('servicios')}
                   className="px-8 py-3.5 rounded-full border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors duration-300"
@@ -300,8 +298,6 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-
-          {/* Indicador de scroll reposicionado para evitar superposición */}
           <motion.div
             className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20"
             initial={{ opacity: 0 }}
@@ -413,7 +409,7 @@ export default function Home() {
     </div>
 
     {/* Carrusel de logos */}
-    <Marquee gradient={false} speed={40} pauseOnHover={true} className="overflow-hidden">
+    <Marquee gradient={false} speed={70} pauseOnHover={true} className="overflow-hidden">
       {[
         { name: "Cliente 1", logo: "/logos/1.png" },
         { name: "Cliente 2", logo: "/logos/2.png" },
@@ -658,7 +654,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="text-gray-400 text-sm">Email</div>
-                      <div className="font-medium">contacto@jelcom.com</div>
+                      <div className="font-medium">comercial@jelcom.com.co</div>
                     </div>
                   </div>
 
