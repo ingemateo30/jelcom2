@@ -13,22 +13,10 @@ const SobreNosotros = () => {
       icono: <Eye size={48} className="text-[#fe9903] mb-4" />,
       titulo: "Visión", 
       descripcion: "Ser el líder indiscutible en soluciones de comunicación empresarial, reconocidos por nuestra capacidad de innovar constantemente y crear conexiones significativas que impulsen el éxito de nuestros clientes.",
-      color: "bg-green-900/30"
+      color: "bg-orange-900/30"
     }
   ];
 
-  const valoresDestacados = [
-    {
-      icono: <CheckCircle size={32} className="text-[#fe9903]" />,
-      titulo: "Excelencia",
-      descripcion: "Compromiso con la calidad y mejora continua en cada interacción."
-    },
-    {
-      icono: <TrendingUp size={32} className="text-[#fe9903]" />,
-      titulo: "Innovación",
-      descripcion: "Adopción constante de tecnologías emergentes para optimizar la comunicación."
-    }
-  ];
 
   return (
     <section id="nosotros" className="py-20 bg-zinc-900">
@@ -77,19 +65,6 @@ const SobreNosotros = () => {
                   <h4 className="text-xl font-bold mb-3 text-white">{item.titulo}</h4>
                   <p className="text-gray-300">{item.descripcion}</p>
                 </motion.div>
-              ))}
-            </div>
-
-            {/* Valores Destacados */}
-            <div className="mt-8 grid md:grid-cols-2 gap-4">
-              {valoresDestacados.map((valor, index) => (
-                <div key={index} className="flex items-center space-x-4">
-                  {valor.icono}
-                  <div>
-                    <h5 className="font-bold text-white">{valor.titulo}</h5>
-                    <p className="text-gray-400 text-sm">{valor.descripcion}</p>
-                  </div>
-                </div>
               ))}
             </div>
           </motion.div>
