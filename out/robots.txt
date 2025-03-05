@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://jelcom.com.co/
+
+# Sitemaps
+Sitemap: https://jelcom.com.co/sitemap.xml
