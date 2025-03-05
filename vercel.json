@@ -1,0 +1,7 @@
+{
+    "rewrites": [
+      { "source": "/sitemap.xml", "destination": "/out/sitemap.xml" },
+      { "source": "/sitemap-0.xml", "destination": "/out/sitemap-0.xml" }
+    ]
+  }
+  
