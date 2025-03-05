@@ -370,7 +370,7 @@ export default function Home() {
                   Con un equipo experto, combinamos tecnología avanzada con estrategias personalizadas para ofrecer experiencias excepcionales.
                 </p>
                 <div className="grid grid-cols-2 gap-6 mt-8">
-                  
+
                 </div>
               </motion.div>
               <motion.div
@@ -395,54 +395,54 @@ export default function Home() {
         </section>
 
         <section id="clientes" className="py-20 bg-gradient-to-b from-zinc-900 to-black">
-  <div className="container mx-auto px-6 lg:px-20">
-    <div className="text-center mb-12">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-3xl font-bold text-white"
-      >
-        Nuestros <span className="text-[#fe9903]">Clientes</span>
-      </motion.h2>
-      <div className="w-20 h-1 bg-[#fe9903] mx-auto mt-2 rounded-full"></div>
-    </div>
+          <div className="container mx-auto px-6 lg:px-20">
+            <div className="text-center mb-12">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="text-3xl font-bold text-white"
+              >
+                Nuestros <span className="text-[#fe9903]">Clientes</span>
+              </motion.h2>
+              <div className="w-20 h-1 bg-[#fe9903] mx-auto mt-2 rounded-full"></div>
+            </div>
 
-    {/* Carrusel de logos */}
-    <Marquee gradient={false} speed={70} pauseOnHover={true} className="overflow-hidden">
-      {[
-        { name: "Cliente 1", logo: "/logos/1.png" },
-        { name: "Cliente 2", logo: "/logos/2.png" },
-        { name: "Cliente 3", logo: "/logos/3.png" },
-        { name: "Cliente 4", logo: "/logos/4.png" },
-        { name: "Cliente 5", logo: "/logos/5.png" },
-        { name: "Cliente 6", logo: "/logos/6.png" },
-        { name: "Cliente 7", logo: "/logos/7.png" },
-        { name: "Cliente 8", logo: "/logos/8.png" },
-        { name: "Cliente 9", logo: "/logos/12.png" },
-        { name: "Cliente 10",logo: "/logos/15.png" },
-      ].map((cliente, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          className="mx-8 flex justify-center"
-        >
-          <div className="bg-white/80 p-4 rounded-lg shadow-lg flex items-center justify-center">
-            <img
-              src={cliente.logo}
-              alt={cliente.name}
-              className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 hover:opacity-90"
-            />
+            {/* Carrusel de logos */}
+            <Marquee gradient={false} speed={70} pauseOnHover={true} className="overflow-hidden">
+              {[
+                { name: "Cliente 1", logo: "/logos/1.png" },
+                { name: "Cliente 2", logo: "/logos/2.png" },
+                { name: "Cliente 3", logo: "/logos/3.png" },
+                { name: "Cliente 4", logo: "/logos/4.png" },
+                { name: "Cliente 5", logo: "/logos/5.png" },
+                { name: "Cliente 6", logo: "/logos/6.png" },
+                { name: "Cliente 7", logo: "/logos/7.png" },
+                { name: "Cliente 8", logo: "/logos/8.png" },
+                { name: "Cliente 9", logo: "/logos/12.png" },
+                { name: "Cliente 10", logo: "/logos/15.png" },
+              ].map((cliente, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="mx-8 flex justify-center"
+                >
+                  <div className="bg-white/80 p-4 rounded-lg shadow-lg flex items-center justify-center">
+                    <img
+                      src={cliente.logo}
+                      alt={cliente.name}
+                      className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 hover:opacity-90"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </Marquee>
           </div>
-        </motion.div>
-      ))}
-    </Marquee>
-  </div>
-</section>
+        </section>
 
 
 
@@ -840,24 +840,20 @@ export default function Home() {
 
             {/* Botón de Cotizar Ahora */}
             <a
-  href="#contacto"
-  className="fixed left-4 top-1/2 transform -translate-y-1/2 hidden md:flex items-center bg-[#fe9903] text-white p-3 rounded-full shadow-lg transition-all duration-300 group hover:p-4"
->
-  <svg className="w-5 h-5 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 1C6.49 1 2 5.49 2 11v3c0 1.66 1.34 3 3 3h1v-2H5c-.55 0-1-.45-1-1v-3c0-4.41 3.59-8 8-8s8 3.59 8 8v3c0 .55-.45 1-1 1h-1v2h1c1.66 0 3-1.34 3-3v-3c0-5.51-4.49-10-10-10zm-1 19h2v2h-2v-2zm-3 0h2v2H8v-2zm8 0h2v2h-2v-2z"></path>
-  </svg>
-  <span className="opacity-0 text-sm ml-2 transition-all duration-300 group-hover:opacity-100 group-hover:ml-3">
-    Cotizar
-  </span>
-</a>
-
-
-
-
+              href="#contacto"
+              className="fixed left-4 top-1/2 transform -translate-y-1/2 hidden md:flex items-center bg-[#fe9903] text-white p-3 rounded-full shadow-lg transition-all duration-300 group hover:p-4"
+            >
+              <svg className="w-5 h-5 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1C6.49 1 2 5.49 2 11v3c0 1.66 1.34 3 3 3h1v-2H5c-.55 0-1-.45-1-1v-3c0-4.41 3.59-8 8-8s8 3.59 8 8v3c0 .55-.45 1-1 1h-1v2h1c1.66 0 3-1.34 3-3v-3c0-5.51-4.49-10-10-10zm-1 19h2v2h-2v-2zm-3 0h2v2H8v-2zm8 0h2v2h-2v-2z"></path>
+              </svg>
+              <span className="opacity-0 text-sm ml-2 transition-all duration-300 group-hover:opacity-100 group-hover:ml-3">
+                Cotizar
+              </span>
+            </a>
           </div>
         </div>
       </footer>
-      <SpeedInsights/>
+      <SpeedInsights />
     </div>
   );
 }
