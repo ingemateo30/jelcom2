@@ -3,7 +3,7 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MenuIcon, X, Phone, Users, Server, FileText, Mail } from 'lucide-react';
+import { MenuIcon, X, Phone, Users, Server, FileText, Mail, Tool, Layers, RefreshCcw, ShoppingCart, Code } from 'lucide-react';
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import Marquee from "react-fast-marquee";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -338,7 +338,7 @@ export default function Home() {
       100% { transform: translateY(0) translateX(0); }
     }
   `}</style></section>
-       <Nosotros/>
+        <Nosotros />
 
 
 
@@ -472,6 +472,68 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Nueva sección de Servicios de Desarrollo */}
+            <div className="mt-16 grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Code size={48} />,
+                  title: "Páginas Web",
+                  description: "Diseño y desarrollo de sitios web modernos, responsivos y totalmente personalizados."
+                },
+                {
+                  icon: <ShoppingCart size={48} />,
+                  title: "E-commerce",
+                  description: "Creación de tiendas online con sistemas de pago, inventario y gestión de productos."
+                },
+                {
+                  icon: <RefreshCcw size={48} />,
+                  title: "Renovación Web",
+                  description: "Actualización y optimización de sitios web existentes para mejorar rendimiento y diseño."
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="bg-zinc-900 rounded-lg p-8 hover:bg-zinc-800 transition duration-300 border-b-2 border-[#fe9903]"
+                >
+                  <div className="text-[#fe9903] mb-6">{service.icon}</div>
+                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-gray-400">{service.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-16 grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  icon: <Layers size={48} />,
+                  title: "Desarrollo de Software a Medida",
+                  description: "Soluciones de software personalizadas adaptadas específicamente a las necesidades de tu negocio."
+                },
+                {
+                  icon: <Layers size={48} />,
+                  title: "Consultoría Tecnológica",
+                  description: "Asesoramiento experto para optimizar tus procesos tecnológicos y estrategias digitales."
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: (index + 3) * 0.2 }}
+                  className="bg-zinc-900 rounded-lg p-8 hover:bg-zinc-800 transition duration-300 border-b-2 border-[#fe9903]"
+                >
+                  <div className="text-[#fe9903] mb-6">{service.icon}</div>
+                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-gray-400">{service.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -558,7 +620,7 @@ export default function Home() {
           </div>
         </section>
         <BlogTecnico />
-        <Calltoaction/>
+        <Calltoaction />
         {/* Contacto Section */}
         <section id="contacto" className="py-20 bg-black">
           <div className="container mx-auto px-4">
