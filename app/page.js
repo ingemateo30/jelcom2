@@ -10,6 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import BlogTecnico from './blogtecnico';
 import Nosotros from './nosotros';
 import Calltoaction from './calltoaction';
+import Proyecto from './proyectos';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -536,6 +537,11 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* Proyectos Section 
+        <section>
+          <Proyecto />
+        </section>
+        */}
 
         {/* Planes Section */}
         <section id="planes" className="py-20 bg-zinc-900">
