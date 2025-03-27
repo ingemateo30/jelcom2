@@ -556,22 +556,22 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Básico",
+                  name: "Basico redes sociales",
                   price: "",
                   description: "Ideal para pequeñas empresas que inician",
-                  features: ["Hasta 5 agentes", "Soporte telefónico", "Informes básicos", "servicio especializado"]
+                  features: ["Realizacion de 4 reels", "7 fotografias", "5 diseños de promocion", "1 publicacion en meta Ads"]
                 },
                 {
-                  name: "Business",
+                  name: "Contact center",
                   price: "",
                   description: "Perfecto para empresas en crecimiento",
-                  features: ["Hasta 10 agentes", "Soporte multicanal", "servicio especializado", "Automatización básica"]
+                  features: ["Mensajeria masiva", "correos electronicos", "envio de whatsapp y sms", "Llamadas telefonicas"]
                 },
                 {
-                  name: "Enterprise",
+                  name: "Paginas web",
                   price: "",
-                  description: "Solución para grandes corporaciones",
-                  features: ["Agentes ilimitados", "IA y automatización", "Servicio especializado", "Integración sistemas"]
+                  description: "Solución para crecer tu negocio",
+                  features: ["Paginas web en nextjs", "ecommerce usando tecnologia actual", "Software a la medida con lenguajes modernos", "Nada de CMS o plantillas genericas"]
                 }
               ].map((plan, index) => (
                 <motion.div
