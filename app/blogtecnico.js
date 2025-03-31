@@ -99,27 +99,27 @@ En la actualidad, tener presencia en internet ya no es una opción, sino una nec
 
 Beneficios Claves de una Página Web
 
-    **Visibilidad 24/7**
+Visibilidad 24/7
 
 A diferencia de un negocio físico con horario limitado, una página web está disponible para clientes potenciales en cualquier momento del día. Esto permite que puedan conocer tus productos o servicios sin restricciones de horario.
 
-    **Credibilidad y Profesionalismo**
+Credibilidad y Profesionalismo
 
 Las empresas con sitio web transmiten confianza y seriedad. Un diseño atractivo y bien estructurado genera una imagen profesional que fortalece la reputación de tu negocio.
 
-    **Mayor Alcance y Expansión**
+Mayor Alcance y Expansión
 
 Una página web rompe las barreras geográficas, permitiendo que clientes de cualquier parte del mundo accedan a tu oferta de productos o servicios, ampliando tu mercado potencial.
 
-    **Publicidad y Marketing Digital**
+Publicidad y Marketing Digital
 
 A través de estrategias como SEO (posicionamiento en buscadores), redes sociales y anuncios pagados, tu negocio puede atraer un público objetivo de manera efectiva y con un costo menor que los métodos tradicionales.
 
-    **Canal de Ventas Directo**
+Canal de Ventas Directo
 
 Si tu página incluye un eCommerce, podrás vender productos o servicios en línea, aumentando tus ingresos sin necesidad de una tienda física.
 
-    **Retos y Consideraciones**
+Retos y Consideraciones
 
 Si bien tener una página web trae grandes ventajas, es importante considerar:
 
