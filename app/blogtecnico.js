@@ -133,7 +133,7 @@ Conclusión
 
 Invertir en una página web es una decisión estratégica que puede impulsar el crecimiento de cualquier negocio. En un mundo cada vez más digital, contar con una presencia online es clave para el éxito y la sostenibilidad empresarial.
       `,
-            categoria: "tecnologi",
+            categoria: "tecnologia",
             fecha: "31 marzo 2025",
             autor: "jelcom",
             icono: <Layers size={32} className="text-orange-500" />
